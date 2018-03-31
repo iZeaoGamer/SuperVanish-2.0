@@ -11,7 +11,7 @@ use pocketmine\entity\Effect;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
-class main extends PluginBase implements Listener{
+class Main extends PluginBase implements Listener{
 
 public function onEnable(){
 $this->getServer()->getPluginManager()->registerEvents($this,$this);
@@ -20,7 +20,7 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
 public function onCommand(CommandSender $sender,Command $cmd,$label,array $args) : bool {
 if($cmd->getName() == "vanish"){
 if($sender instanceof Player){
-if($sender->hasPermission("vanish.command")){
+if($sender->hasPermission("supervanish.spectate")){
           if(isset($args[0])){
     if($args[0] == "on"){
  $sender->setNameTagVisible(false);
