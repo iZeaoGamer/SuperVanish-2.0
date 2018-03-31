@@ -17,14 +17,14 @@ class Main extends PluginBase implements Listener{
 public function onEnable(){
 $this->getServer()->getPluginManager()->registerEvents($this,$this);
    }
-public function onCommand(CommandSender $sender,Command $cmd,$label,array $args) : bool {
+public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
 if($cmd->getName() == "vanish"){
 if($sender instanceof Player){
 if($sender->hasPermission("supervanish.spectate")){
           if(isset($args[0])){
     if($args[0] == "on"){
  $sender->setNameTagVisible(false);
- $sender->addEffect(Effect::getEffect(Effect::INVISIBILITY)->setDuration(99999999*20)->setAmplifier(1)->setVisible(false));
+ $sender->addEffect(EffectInstance::getEffect(Effect::INVISIBILITY)->setDuration(99999999*20)->setAmplifier(1)->setVisible(false));
  $event->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aON", 40, 100, 40);
  return true;
         }
