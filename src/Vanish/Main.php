@@ -26,21 +26,26 @@ if($sender->hasPermission("supervanish.spectate")){
  $sender->setNameTagVisible(false);
  $sender->addEffect(Effect::getEffect(Effect::INVISIBILITY)->setDuration(99999999*20)->setAmplifier(1)->setVisible(false));
  $event->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aON", 40, 100, 40);
+ return true;
         }
    if($args[0] == "off"){
  $sender->setNameTagVisible(true);
  $sender->removeEffect(Effect::INVISIBILITY);
  $event->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aOFF", 40, 100, 40);
+ return true;
        }else{
           $sender->sendMessage("§l§bVanish §8> §r§aUse /vanish <on|off>");
+          return true;
      }
    }else{
     $sender->sendMessage("- you must have a premium rank in order to use this command");
+    return true;
       }
   }else{
     $sender->sendMessage("Please use this command in game");
+   return true;
    }
   }
 }
-}
+return true;
               }
