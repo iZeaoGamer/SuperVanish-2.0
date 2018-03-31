@@ -12,11 +12,10 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 
 class Main extends PluginBase implements Listener{
-
+    
 public function onEnable(){
 $this->getServer()->getPluginManager()->registerEvents($this,$this);
    }
-
 public function onCommand(CommandSender $sender,Command $cmd,$label,array $args) : bool {
 if($cmd->getName() == "vanish"){
 if($sender instanceof Player){
@@ -48,4 +47,5 @@ if($sender->hasPermission("supervanish.spectate")){
   }
 }
 return true;
-              }
+        }
+}
