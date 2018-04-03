@@ -15,6 +15,9 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 
 class Main extends PluginBase implements Listener{
     
+public $plugin;
+public $essentialspe;
+    
 public function onEnable(){
 $this->getServer()->getPluginManager()->registerEvents($this,$this);
    }
