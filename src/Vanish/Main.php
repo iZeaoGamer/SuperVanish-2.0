@@ -18,7 +18,7 @@ public function onEnable(){
 $this->getServer()->getPluginManager()->registerEvents($this,$this);
    }
 public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
-if($cmd->getName() == "vanish"){
+if($cmd->getName() == "supervanish"){
 if($sender instanceof Player){
 if($sender->hasPermission("supervanish.spectate")){
           if(isset($args[0])){
