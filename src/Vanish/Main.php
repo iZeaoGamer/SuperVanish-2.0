@@ -27,7 +27,7 @@ if($sender->hasPermission("supervanish.spectate")){
  $sender->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), (99999999*20), (1), (false)));
  $sender->getPlayer()->addActionBarMessage("§dSupervanish has been turned on. \n§cNo one can see you.");
  $sender->sendMessage("§7[§aSuper§6Vanish§7] §dVanish mode has been enabled. §5No one can see you. :)");
- $sender->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aON", 1000, 100000, 10000);
+ $sender->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aON", 40, 100000000, 40);
  return true;
         }
    if($args[0] == "off"){
