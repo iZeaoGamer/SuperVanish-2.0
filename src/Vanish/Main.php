@@ -25,22 +25,26 @@ if($sender->hasPermission("supervanish.spectate")){
     if($args[0] == "on"){
  $sender->setNameTagVisible(false);
  $sender->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), (99999999*20), (1), (false)));
- $event->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aON", 40, 100, 40);
+ $sender->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aON", 40, 100, 40);
  return true;
         }
    if($args[0] == "off"){
  $sender->setNameTagVisible(true);
  $sender->removeEffect(Effect::INVISIBILITY);
- $event->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aOFF", 40, 100, 40);
+ $sender->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aOFF", 40, 100, 40);
  return true;
-       }else{
-          $sender->sendMessage("§l§bVanish §8> §r§aUse /vanish <on|off>");
-          return true;
      }
    }else{
-    $sender->sendMessage("Please use: /vanish <on|off>");
+    $sender->sendMessage("§aPlease use: §b/vanish <on|off> §6to turn on / off vanish.");
     return true;
-      }
+           }
+    if($args[0] == "about"){
+  $sender->sendMessage("§5Plugin name: §dSuperVanishV2");
+  $sender->sendMessage("§aThis plugin was originally made by §bCirgio.");
+  $sender->sendMessage("§bThis plugin was updated by §cVMPE Development Team");
+  $sender->sendMessage("§cDescription: §dThis plugin was based off from Supervanish V1, which got outdated, and some bugs did occurr with it.\n§dThis is Supervanish V2 / 2.0");
+  return true;
+    }
   }else{
     $sender->sendMessage("Please use this command in game");
    return true;
