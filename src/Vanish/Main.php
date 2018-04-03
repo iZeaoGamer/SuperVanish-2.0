@@ -8,6 +8,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
 use pocketmine\entity\Effect;
+use essentialspe\BaseFiles\BaseAPI;
 use pocketmine\entity\EffectInstance;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
@@ -23,18 +24,22 @@ if($sender instanceof Player){
 if($sender->hasPermission("supervanish.spectate")){
           if(isset($args[0])){
     if($args[0] == "on"){
+ $essentialspe = $this->plugin;
  $sender->setNameTagVisible(false);
  $sender->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), (99999999*20), (1), (false)));
  $sender->getPlayer()->addActionBarMessage("§dSupervanish has been turned on. \n§cNo one can see you.");
  $sender->sendMessage("§7[§aSuper§6Vanish§7] §dVanish mode has been enabled. §5No one can see you. :)");
+ $essentialspe->setGod(true);
  $sender->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aON", 40, 100000000, 40);
  return true;
         }
    if($args[0] == "off"){
+ $essentialspe = $this->plugin;
  $sender->setNameTagVisible(true);
  $sender->removeEffect(Effect::INVISIBILITY);
  $sender->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aOFF", 40, 100, 40);
  $sender->getPlayer()->removeTitles(true);
+ $essentialspe->setGod(false);
  $sender->getPlayer()->addActionBarMessage("§dSupervanish has been turned off. \n§bEveryone can see you now.");
  $sender->sendMessage("§dSuperVanish has been turned off. §bEveryone can see you.");
  return true;
