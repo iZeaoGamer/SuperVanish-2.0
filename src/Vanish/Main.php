@@ -24,7 +24,7 @@ if($sender->hasPermission("supervanish.spectate")){
           if(isset($args[0])){
     if($args[0] == "on"){
  $sender->setNameTagVisible(false);
- $sender->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), (99999999*20), (1), (false))));
+ $sender->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), (99999999*20), (1), (false)));
  $event->getPlayer()->addTitle("§l§7Vanish has been", "§l§7Turned - §aON", 40, 100, 40);
  return true;
         }
