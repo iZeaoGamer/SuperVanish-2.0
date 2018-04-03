@@ -1,11 +1,12 @@
-name: Vanish
-version: 1.0
-api: [3.0.0-ALPHA10, 3.0.0-ALPHA11]
-author: iCirgio
+name: SuperVanishV2
+version: 2.0.0
+api: [3.0.0-ALPHA11]
+author: iCirgio, edited by VMPE Development Team
 main: Vanish\Main
 
 commands:
-    vanish: 
+    supervanish: 
         permission: vanish.command
         description: "Vanishes the player who uses the command!"
-        usage: "/vanish on/off"
+        aliases: [sv]
+        usage: "/supervanish or sv on/off/about"
